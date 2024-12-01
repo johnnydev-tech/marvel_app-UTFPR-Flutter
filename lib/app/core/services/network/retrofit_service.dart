@@ -1,6 +1,7 @@
-import 'package:marvel_app/app/core/env/app_envs.dart';
-import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
+import 'package:retrofit/retrofit.dart';
+
+import '../../env/app_envs.dart';
 
 part 'retrofit_service.g.dart';
 

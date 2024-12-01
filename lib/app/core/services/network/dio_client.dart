@@ -1,8 +1,9 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:marvel_app/app/core/env/app_envs.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+
+import '../../env/app_envs.dart';
 
 class DioClient {
   static Dio create() {
