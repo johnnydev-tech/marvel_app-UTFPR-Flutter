@@ -22,9 +22,18 @@ void main() {
         'should emit loading state and then loaded state with characters on success',
         () async {
       final characters = [
-        CharacterEntity(id: 1, name: 'Spider-Man', description: 'A superhero'),
         CharacterEntity(
-            id: 2, name: 'Iron Man', description: 'A billionaire hero'),
+          id: 1,
+          name: 'Spider-Man',
+          description: 'A superhero',
+          thumbnail: '',
+        ),
+        CharacterEntity(
+          id: 2,
+          name: 'Iron Man',
+          description: 'A billionaire hero',
+          thumbnail: '',
+        ),
       ];
 
       when(() => mockFetchCharactersUseCase()).thenAnswer(

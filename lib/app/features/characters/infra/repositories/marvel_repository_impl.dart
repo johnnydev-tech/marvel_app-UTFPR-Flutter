@@ -20,15 +20,7 @@ class MarvelRepositoryImpl implements MarvelRepository {
       final characters = (result['data']['results'] as List)
           .map((json) => CharacterModel.fromJson(json))
           .toList();
-      return Right(characters
-          .map(
-            (model) => CharacterEntity(
-              id: model.id,
-              name: model.name,
-              description: model.description,
-            ),
-          )
-          .toList());
+      return Right(characters);
     } on ServerException {
       return Left(ServerFailure());
     }

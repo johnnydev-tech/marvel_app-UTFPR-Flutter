@@ -26,7 +26,8 @@ void main() {
           {
             'id': 1,
             'name': 'Spider-Man',
-            'description': 'A hero in the Marvel Universe'
+            'description': 'A hero in the Marvel Universe',
+            'thumbnail': {'path': '', 'extension': ''}
           }
         ]
       }
