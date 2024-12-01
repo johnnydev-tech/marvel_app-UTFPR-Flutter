@@ -10,8 +10,8 @@ import '../../features/characters/infra/repositories/marvel_repository_impl.dart
 import '../../features/characters/presenter/providers/characters_provider.dart';
 
 import '../api/api_config_service.dart';
-import '../network/dio_client.dart';
-import '../network/retrofit_service.dart';
+import '../services/network/dio_client.dart';
+import '../services/network/retrofit_service.dart';
 
 final getIt = GetIt.instance;
 

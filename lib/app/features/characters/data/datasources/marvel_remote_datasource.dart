@@ -4,7 +4,7 @@ import 'package:marvel_app/app/core/env/app_envs.dart';
 
 import '../../../../core/api/api_config_service.dart';
 import '../../../../core/error/exception.dart';
-import '../../../../core/network/retrofit_service.dart';
+import '../../../../core/services/network/retrofit_service.dart';
 
 abstract class MarvelRemoteDataSource {
   Future<Map<String, dynamic>> fetchCharacters();
