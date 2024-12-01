@@ -98,8 +98,15 @@ class _CharactersListPageState extends State<CharactersListPage> {
                 CharactersLoading() => const Center(
                     child: CircularProgressIndicator(),
                   ),
-                CharactersLoaded() => ListView.builder(
+                CharactersLoaded() => GridView.builder(
                     itemCount: state.characters.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 8,
+                      mainAxisSpacing: 8,
+                      childAspectRatio: 0.7,
+                    ),
                     itemBuilder: (context, index) {
                       final character = state.characters[index];
                       return _buildItem(character);
@@ -120,9 +127,51 @@ class _CharactersListPageState extends State<CharactersListPage> {
   }
 
   Widget _buildItem(CharacterEntity character) {
-    return ListTile(
-      title: Text(character.name),
-      subtitle: Text(character.description),
+    return InkWell(
+      borderRadius: BorderRadius.circular(8),
+      child: Ink(
+        child: Stack(
+          children: [
+            Hero(
+              tag: character.id,
+              child: Ink(
+                height: 240,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(8),
+                  image: DecorationImage(
+                    image: NetworkImage(character.thumbnail),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Ink(
+                padding: const EdgeInsets.all(8),
+                decoration: const BoxDecoration(
+                  color: Colors.black87,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(8),
+                    bottomRight: Radius.circular(8),
+                  ),
+                ),
+                child: Text(
+                  character.name,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       onTap: () {
         navigatorHandler.push(
           context,
