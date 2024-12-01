@@ -188,6 +188,12 @@
       "languageVersion": "3.1"
     },
     {
+      "name": "flutter_secure_storage",
+      "rootUri": "file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/flutter_secure_storage-4.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/johnnyfdev/src/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -518,7 +524,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-30T23:36:50.390748Z",
+  "generated": "2024-12-01T00:49:06.344233Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/johnnyfdev/src/flutter",

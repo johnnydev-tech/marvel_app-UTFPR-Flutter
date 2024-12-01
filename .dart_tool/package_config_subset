@@ -114,6 +114,10 @@ flutter_lints
 3.1
 file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/flutter_lints-4.0.0/
 file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/flutter_lints-4.0.0/lib/
+flutter_secure_storage
+2.12
+file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/flutter_secure_storage-4.2.1/
+file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/flutter_secure_storage-4.2.1/lib/
 frontend_server_client
 3.0
 file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/frontend_server_client-4.0.0/
