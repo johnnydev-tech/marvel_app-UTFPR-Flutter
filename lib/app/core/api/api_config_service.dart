@@ -16,7 +16,7 @@ class ApiConfigService {
     return formattedTimestamp;
   }
 
-  String _hash(String dateTime) {
+  String hash(String dateTime) {
     final bytes = utf8.encode('$dateTime$apiSecret$apiKey');
 
     final digest = md5.convert(bytes);
@@ -25,7 +25,7 @@ class ApiConfigService {
 
   Map<String, String> getApiParameters() {
     final timestamp = _getTimestamp();
-    final hash = _hash(timestamp);
+    final hash = this.hash(timestamp);
     return {
       'ts': timestamp,
       'apikey': apiKey,
