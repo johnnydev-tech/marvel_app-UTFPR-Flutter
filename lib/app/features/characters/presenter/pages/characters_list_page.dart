@@ -8,6 +8,7 @@ import '../../../../core/theme/theme_provider.dart';
 import '../../domain/entities/character_entity.dart';
 import '../providers/characters_provider.dart';
 import '../states/characters_state.dart';
+import 'custom_drawer.dart';
 
 class CharactersListPage extends StatefulWidget {
   const CharactersListPage({super.key});
@@ -86,6 +87,7 @@ class _CharactersListPageState extends State<CharactersListPage> {
             ),
           ],
         ),
+        drawer: const CustomDrawer(),
         body: RefreshIndicator(
           onRefresh: () async {
             await charactersProvider.fetchCharacters();
