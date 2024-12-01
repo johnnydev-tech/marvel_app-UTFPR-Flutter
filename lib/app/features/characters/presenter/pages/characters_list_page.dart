@@ -98,19 +98,22 @@ class _CharactersListPageState extends State<CharactersListPage> {
                 CharactersLoading() => const Center(
                     child: CircularProgressIndicator(),
                   ),
-                CharactersLoaded() => GridView.builder(
-                    itemCount: state.characters.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      childAspectRatio: 0.7,
+                CharactersLoaded() => SafeArea(
+                    child: GridView.builder(
+                      itemCount: state.characters.length,
+                      padding: const EdgeInsets.all(16),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 8,
+                        mainAxisSpacing: 8,
+                        childAspectRatio: 0.7,
+                      ),
+                      itemBuilder: (context, index) {
+                        final character = state.characters[index];
+                        return _buildItem(character);
+                      },
                     ),
-                    itemBuilder: (context, index) {
-                      final character = state.characters[index];
-                      return _buildItem(character);
-                    },
                   ),
                 CharactersError() => const Center(
                     child: Text("Error fetching characters"),
