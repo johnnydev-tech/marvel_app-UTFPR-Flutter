@@ -1,0 +1,1 @@
+ /Users/johnnyfdev/Documents/UTFPR/flutter/marvel_app/.dart_tool/flutter_build/4a98aa185a549ddbfa223228d2c643a0/native_assets.yaml: 
