@@ -198,10 +198,10 @@ mime
 3.2
 file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/mime-2.0.0/
 file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/mime-2.0.0/lib/
-mockito
-3.1
-file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/mockito-5.4.4/
-file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/mockito-5.4.4/lib/
+mocktail
+2.12
+file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/mocktail-1.0.4/
+file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/mocktail-1.0.4/lib/
 nested
 2.12
 file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/nested-1.0.0/

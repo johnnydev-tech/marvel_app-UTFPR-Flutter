@@ -326,10 +326,10 @@
       "languageVersion": "3.2"
     },
     {
-      "name": "mockito",
-      "rootUri": "file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/mockito-5.4.4",
+      "name": "mocktail",
+      "rootUri": "file:///Users/johnnyfdev/.pub-cache/hosted/pub.dev/mocktail-1.0.4",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "2.12"
     },
     {
       "name": "nested",
@@ -524,7 +524,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-12-01T00:49:06.344233Z",
+  "generated": "2024-12-01T01:12:01.177893Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/johnnyfdev/src/flutter",
