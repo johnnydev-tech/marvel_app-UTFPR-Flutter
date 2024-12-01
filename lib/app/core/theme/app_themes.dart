@@ -4,14 +4,14 @@ class AppThemes {
   static ThemeData get lightTheme {
     return ThemeData(
       brightness: Brightness.light,
-      primaryColor: Colors.blue,
+      primaryColor: Colors.red,
     );
   }
 
   static ThemeData get darkTheme {
     return ThemeData(
       brightness: Brightness.dark,
-      primaryColor: Colors.black,
+      primaryColor: Colors.red,
     );
   }
 }

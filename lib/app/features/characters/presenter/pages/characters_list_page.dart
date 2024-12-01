@@ -98,22 +98,20 @@ class _CharactersListPageState extends State<CharactersListPage> {
                 CharactersLoading() => const Center(
                     child: CircularProgressIndicator(),
                   ),
-                CharactersLoaded() => SafeArea(
-                    child: GridView.builder(
-                      itemCount: state.characters.length,
-                      padding: const EdgeInsets.all(16),
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 8,
-                        mainAxisSpacing: 8,
-                        childAspectRatio: 0.7,
-                      ),
-                      itemBuilder: (context, index) {
-                        final character = state.characters[index];
-                        return _buildItem(character);
-                      },
+                CharactersLoaded() => GridView.builder(
+                    itemCount: state.characters.length,
+                    padding: const EdgeInsets.all(16),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 8,
+                      mainAxisSpacing: 8,
+                      childAspectRatio: 0.7,
                     ),
+                    itemBuilder: (context, index) {
+                      final character = state.characters[index];
+                      return _buildItem(character);
+                    },
                   ),
                 CharactersError() => const Center(
                     child: Text("Error fetching characters"),
@@ -130,18 +128,18 @@ class _CharactersListPageState extends State<CharactersListPage> {
   }
 
   Widget _buildItem(CharacterEntity character) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(8),
-      child: Ink(
-        child: Stack(
-          children: [
-            Hero(
-              tag: character.id,
-              child: Ink(
-                height: 240,
+    return Hero(
+      tag: character.id,
+      child: Material(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(8),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(8),
+          child: Stack(
+            children: [
+              Ink(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.grey,
                   borderRadius: BorderRadius.circular(8),
                   image: DecorationImage(
                     image: NetworkImage(character.thumbnail),
@@ -149,39 +147,45 @@ class _CharactersListPageState extends State<CharactersListPage> {
                   ),
                 ),
               ),
-            ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Ink(
+              Ink(
+                height: double.infinity,
+                width: double.infinity,
                 padding: const EdgeInsets.all(8),
                 decoration: const BoxDecoration(
-                  color: Colors.black87,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(8),
-                    bottomRight: Radius.circular(8),
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black,
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(8),
                   ),
                 ),
-                child: Text(
-                  character.name,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+                child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    character.name,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
+          onTap: () {
+            navigatorHandler.push(
+              context,
+              "/characters/${character.id}",
+              arguments: character,
+            );
+          },
         ),
       ),
-      onTap: () {
-        navigatorHandler.push(
-          context,
-          "/characters/${character.id}",
-          arguments: character,
-        );
-      },
     );
   }
 }

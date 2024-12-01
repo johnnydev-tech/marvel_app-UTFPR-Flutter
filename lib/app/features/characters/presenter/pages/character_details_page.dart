@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/theme/extension.dart';
 import '../../domain/entities/character_entity.dart';
 
 class CharacterDetailsPage extends StatelessWidget {
@@ -15,9 +16,21 @@ class CharacterDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Character Details")),
-      body: Center(
-        child: Text("Details for character: $id"),
+      appBar: AppBar(title: Text("Character $id")),
+      body: Column(
+        children: [
+          Hero(
+            tag: character.id,
+            child: Image.network(
+              character.thumbnail,
+              width: double.infinity,
+              height: 400,
+            ),
+          ),
+          Text(character.name, style: context.theme.textTheme.headlineSmall),
+          Text(character.description,
+              style: context.theme.textTheme.bodyMedium),
+        ],
       ),
     );
   }
