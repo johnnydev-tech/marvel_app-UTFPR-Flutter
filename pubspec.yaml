@@ -13,22 +13,22 @@ dependencies:
 
   cupertino_icons: ^1.0.8
 
-  go_router:
-  dio:
-  pretty_dio_logger: 
+  go_router: ^14.6.1
+  dio: ^5.7.0
+  pretty_dio_logger: ^1.4.0 
   retrofit:
   provider:
   get_it:
   json_annotation:
   dartz: 
   crypto:
-  flutter_secure_storage:
+  flutter_secure_storage: ^9.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
   mocktail:
   retrofit_generator:
