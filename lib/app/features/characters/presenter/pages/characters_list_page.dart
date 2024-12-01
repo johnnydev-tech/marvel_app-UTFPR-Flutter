@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/navigator/navigator_handler.dart';
 import '../../../../core/theme/app_theme_mode.dart';
 import '../../../../core/theme/theme_provider.dart';
+import '../../domain/entities/character_entity.dart';
 import '../providers/characters_provider.dart';
 import '../states/characters_state.dart';
 
@@ -101,17 +102,7 @@ class _CharactersListPageState extends State<CharactersListPage> {
                     itemCount: state.characters.length,
                     itemBuilder: (context, index) {
                       final character = state.characters[index];
-                      return ListTile(
-                        title: Text(character.name),
-                        subtitle: Text(character.description),
-                        onTap: () {
-                          navigatorHandler.push(
-                            context,
-                            "/characters/${character.id}",
-                            arguments: character,
-                          );
-                        },
-                      );
+                      return _buildItem(character);
                     },
                   ),
                 CharactersError() => const Center(
@@ -125,6 +116,20 @@ class _CharactersListPageState extends State<CharactersListPage> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildItem(CharacterEntity character) {
+    return ListTile(
+      title: Text(character.name),
+      subtitle: Text(character.description),
+      onTap: () {
+        navigatorHandler.push(
+          context,
+          "/characters/${character.id}",
+          arguments: character,
+        );
+      },
     );
   }
 }

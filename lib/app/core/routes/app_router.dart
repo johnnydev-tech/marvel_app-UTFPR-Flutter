@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../../features/characters/domain/entities/character_entity.dart';
 import '../../features/characters/presenter/pages/character_details_page.dart';
 import '../../features/characters/presenter/pages/characters_list_page.dart';
 
@@ -15,7 +16,10 @@ class AppRouter {
             path: ':id',
             builder: (context, state) {
               final id = state.pathParameters['id']!;
-              return CharacterDetailsPage(id: id);
+              return CharacterDetailsPage(
+                id: id,
+                character: state.extra! as CharacterEntity,
+              );
             },
           ),
         ],
