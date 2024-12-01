@@ -9,6 +9,7 @@ import '../../features/characters/presenter/providers/characters_provider.dart';
 import '../api/api_config_service.dart';
 import '../env/app_envs.dart';
 import '../navigator/navigator_handler.dart';
+import '../services/device_info/device_info_service.dart';
 import '../services/local_storage/flutter_security_storage.dart';
 import '../services/local_storage/local_storage.dart';
 import '../services/network/dio_client.dart';
@@ -18,6 +19,8 @@ import '../theme/theme_provider.dart';
 final getIt = GetIt.instance;
 
 void setupDependencies() {
+  getIt.registerLazySingleton<DeviceInfoService>(() => DeviceInfoService());
+
   getIt.registerLazySingleton<LocalStorage>(() => FlutterSecurityStorage());
 
   getIt.registerLazySingleton<ThemeProvider>(() => ThemeProvider(getIt()));
